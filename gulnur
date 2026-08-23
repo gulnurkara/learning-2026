@@ -1,0 +1,113 @@
+public class Main {
+    // Main = sınıfın adı.
+
+    public static void main(String[] args) {   // main = programın başladığı metot.
+        int number = -50;                       // number değişkeninin içine 50 değerini koydum.
+        yazdir(number);                        // Burada yazdir metodunu cagırıyorum
+    }
+
+    public static void yazdir(int number) {
+        // yazdir = metodun adı.
+        // void = bu metot bana bir değer geri döndürmeyecek.
+        // int number = metoda dışarıdan gelecek tam sayıyı tutan parametre.
+
+        if (number > 0) {
+            System.out.println("positive");
+        } else if (number < 0) {
+            System.out.println("negative");
+        } else {
+            System.out.println("zero");
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------------
+
+public class Practice1 {            // Practice1 = sınıfın adı. Bütün kodlarımız bu sınıfın içinde.
+
+    public static void main(String[] args) {
+        // main = programın başladığı metot.
+        // void = bu metot geriye bir değer döndürmeyecegini icin
+
+        sonucuYazdir(50.10);
+        // sonucuYazdir metodunu cagırıyorum
+        // 50.10 değerini bu metoda gönderiyorum.
+    }
+
+
+    public static void sonucuYazdir(double kilometreSaat) {
+        // sonucuYazdir = metodun adı.
+        // void = bu metot geriye değer döndürmeyecegı ıcın
+        // kilometreSaat = metoda dışarıdan gelen değeri tutan parametre.
+        // double = çünkü 50.10 gibi ondalıklı sayı gelebilir.
+
+
+        if (kilometreSaat < 0) {
+            System.out.println("Invalid Value");
+        }
+        else {
+            long milSaat = milSaateCevir(kilometreSaat);
+            // milSaat = değişken.
+            // long = bu değişkende tam sayı tutacağım.
+            // milSaateCevir metodunu çağırıyorum.
+            // kilometreSaat değerini ona gönderiyorum.
+            // O metodun return ile geri verdiği sonucu milSaat değişkenine koyuyorum.
+
+            System.out.println(kilometreSaat + " km/h = "
+                + milSaat + " mi/h");
+        }
+    }
+
+
+    public static long milSaateCevir(double kilometreSaat) {
+        // milSaateCevir = metodun adı.
+        // long = bu metot işini bitirince tam sayı geri döndürecek.
+        // kilometreSaat = dışarıdan gelen değeri tutan parametre.
+        // double = ondalıklı değer kabul edebilmesi için.
+
+
+        if (kilometreSaat < 0) {
+            return -1;
+            // return = sonucu çağırıldığı yere gonder
+        }
+
+
+        return Math.round(kilometreSaat / 1.609);
+        // kilometreSaat değerini 1.609'a bölerek mile çevir.
+        // Math.round = çıkan ondalıklı sonucu en yakın tam sayıya yuvarlayan Java'nın hazır metotu
+        // return = çıkan tam sayıyı bizi çağıran yere geri gönder.
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+
+public class Practice2 { // Practice2 adında sınıf oluşturduk
+
+    public static void main(String[] args) { // Programın çalışmaya başladığı ana metot
+
+        calculate(5123); // calculate metodunu cagırdık ve ona 5123 değerini gönderdik
+    }
+
+    public static void calculate(int kiloByte) {
+        // calculate adında bir metot oluşturduk
+        // void = geriye bir değer döndürmeyecek
+        // int kiloByte = dışarıdan gelen tam sayıyı kiloByte değişkeninde tutacak
+
+        if (kiloByte < 0) {
+            System.out.println("Invalid Value");
+        } else {
+            int megaByte = kiloByte / 1024;
+            // Kaç tam megabyte olduğunu bul,Sonucu megaByte değişkeninde tut
+
+            int remainingKiloBytes = kiloByte % 1024;
+            // % = bölümden KALANI bulur
+            // 5123'ü 1024'e böldükten sonra kaç KB kaldığını bul
+            // Sonucu remainingKiloBytes değişkeninde tut
+
+            System.out.println(
+                kiloByte + " KB = "      // + burada yazıları ve değişkenleri yan yana birlestiriyor
+                    + megaByte + " MB and "
+                    + remainingKiloBytes + " KB"
+            );
+        }
+    }
+}
