@@ -164,7 +164,7 @@ public class Practice5 {
         // area(5.0)       -> tek parametreli area çalışır.
         // area(5.0, 4.0)  -> iki parametreli area çalışır.
 
-        System.out.println(area(5.0, 4.0));
+        System.out.println(area(-5.0, 4.0));
         // area metoduna İKİ değer gönderdim.
         // Java iki parametreli area metodunu çalıştıracak.
         // Dikdörtgenin alanını hesaplayacak.
@@ -185,6 +185,7 @@ public class Practice5 {
             // Eğer yarıçap negatifse geçersiz değer.
             return -1.0;
             // -1.0 değerini geri gönder ve metodu bitir.
+            // sayı gönderdim cünkü false vs dönmesini isteseydim boolean olarak tanımlamam gerekirdi metotu
         }
         return Math.PI * radius * radius;
         // Math.PI = Java'nın hazır PI sayısı (yaklaşık 3.14159).
