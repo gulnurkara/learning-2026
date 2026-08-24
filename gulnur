@@ -111,3 +111,43 @@ public class Practice2 { // Practice2 adında sınıf oluşturduk
         }
     }
 }
+--------------------------------------------------------------------------------------------------------
+
+public class Practice3 {
+
+    public static void main(String[] args){
+        System.out.println(shouldWakeUp(true,-1));
+    }
+
+    public static boolean shouldWakeUp(boolean barking,int hourOfDay) {
+        // boolean= true veya false geri veren veri tipi
+        // shouldWakeUp = metot ,köpek havlıyor mu?
+        // barking,hourOfDay = parametre
+
+        if( hourOfDay < 0 || hourOfDay > 23){                   //    || = VEYA
+            return false;
+        }
+        if ( barking && ( hourOfDay < 8 || hourOfDay > 22)){    //    && = VE
+            return true;
+        }
+        return false;        // else yazmadım cunku return calıstıgında metot zaten bitiyor
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+public class Practice4 {
+
+    public static void main(String[] args){
+        System.out.println(areEqualByThreeDecimalPlaces(3.14,3.145888));
+    }
+
+    public static boolean areEqualByThreeDecimalPlaces(double num1,double num2){
+        int number1 = (int) (num1 * 1000) ;   // (int) = casting, ondalıklı degeri int'e cevirir.Virgülden sonraki kısmı atar,yuvarlama yapmaz.
+        int number2 = (int) (num2 * 1000) ;
+
+        if (number1 == number2){
+            return true;
+        }
+        return false;
+    }
+
+}
