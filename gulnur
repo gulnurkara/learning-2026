@@ -151,3 +151,58 @@ public class Practice4 {
     }
 
 }
+-------------------------------------------------------------------------------------------------------------------
+
+public class Practice5 {
+    public static void main(String[] args) {
+        // METHOD OVERLOADING:
+        // Aynı isimde birden fazla metot olabilir.
+        // Java hangi metodu çalıştıracağını:
+        // 1) parametre sayısına
+        // 2) parametre tipine bakarak seçer.
+        // Örnek:
+        // area(5.0)       -> tek parametreli area çalışır.
+        // area(5.0, 4.0)  -> iki parametreli area çalışır.
+
+        System.out.println(area(5.0, 4.0));
+        // area metoduna İKİ değer gönderdim.
+        // Java iki parametreli area metodunu çalıştıracak.
+        // Dikdörtgenin alanını hesaplayacak.
+
+        System.out.println(area(5.0));
+        // area metoduna TEK değer gönderdim.
+        // Java tek parametreli area metodunu çalıştıracak.
+        // Dairenin alanını hesaplayacak.
+
+    }
+
+    public static double area(double radius) {
+        // area = metodun adı.
+        // double = bu metot bana ondalıklı bir sonuç geri verecek.
+        // radius = yarıçap bilgisini tutan parametre.
+        // radius da double çünkü 5.5 gibi ondalıklı değer gelebilir.
+        if (radius < 0) {
+            // Eğer yarıçap negatifse geçersiz değer.
+            return -1.0;
+            // -1.0 değerini geri gönder ve metodu bitir.
+        }
+        return Math.PI * radius * radius;
+        // Math.PI = Java'nın hazır PI sayısı (yaklaşık 3.14159).
+        // Dairenin alanı = PI × yarıçap × yarıçap.
+        // Hesaplanan alanı geri gönder.
+    }
+
+    public static double area(double x, double y) {
+        // Yine metodun adı area.
+        // Ama bu sefer iki parametre alıyor.
+        // x ve y = dikdörtgenin iki kenarı.
+        if (x < 0 || y < 0) {
+            // || = VEYA
+            // x negatif VEYA y negatifse geçersiz değer.
+            return -1.0;
+        }
+        return x * y;
+        // Dikdörtgenin alanı = kısa kenar × uzun kenar.
+        // Hesaplanan sonucu geri gönder.
+    }
+}
